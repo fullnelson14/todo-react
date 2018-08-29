@@ -4,20 +4,70 @@ body {
   font-family: sans-serif;
 }
 
-
-.count-number {
-    margin: 10px;
-    border: 2px solid blue;
-    border-radius: 6px;
-    padding: 10px;
-    display: inline-block;
-    text-align: center;
-    font-size: 25px;
+.header-row {
+  display: flex;
+  align-items: center;
 }
 
-.count-number button {
-    color: white;
-    background-color: blue;
-    border-radius: 6px;
-    font-size: 30px;
+.header-row button,
+.header-row h4 {
+  margin: 10px;
+}
+
+.count-number {
+  margin: 10px;
+  border: 2px solid blue;
+  border-radius: 6px;
+  padding: 5px;
+  display: inline-block;
+  width: 100px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.row1 {
+  display: flex;
+}
+
+.row1 div {
+  font-size: 35px;
+}
+
+.remove-button {
+  color: red;
+  background-color: transparent;
+  border: none;
+  font-size: 15px;
+  transition-duration: 400ms;
+  align-self: flex-end;
+}
+
+.remove-button:hover {
+  color: black;
+}
+
+.remove-button:active {
+  color: grey;
+}
+
+.remove-button:focus {
+  outline: none;
+}
+
+.row2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.row2 button {
+  color: white;
+  background-color: blue;
+  border-radius: 6px;
+  border: none;
+  width: 45%;
+  font-size: 30px;
 }

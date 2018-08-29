@@ -1,31 +1,35 @@
-import React, { Component } from 'react';
-import Counter from './components/counter.js';
-import {connect} from 'react-redux';
+import React, { Component } from "react";
+import Counter from "./components/counter.js";
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-          {this.props.counters.map( e => <Counter id={e.id} />)}
+        <div className="header-row">
+          <h4>Counters</h4>
           <button onClick={this.props.addCounter}>Add Counter</button>
-          <button onClick={this.props.removeCounter}>Remove Counter</button>
-          
+        </div>
+
+        {this.props.counters.map(e => (
+          <Counter id={e.id} />
+        ))}
       </div>
     );
   }
 }
 
-const AppContainer = connect(state => {
-        return {
-                counters: state.counters
-        }
-}, dispatch => {
+const AppContainer = connect(
+  state => {
     return {
-        addCounter: () => dispatch({ type: 'ADD_COUNTER' }),            
-        removeCounter: () => dispatch({ type: 'REMOVE_COUNTER' }),            
-    }
-})(App);
-
-
+      counters: state.counters
+    };
+  },
+  dispatch => {
+    return {
+      addCounter: () => dispatch({ type: "ADD_COUNTER" })
+    };
+  }
+)(App);
 
 export default AppContainer;
