@@ -9,10 +9,10 @@ class TodoModule extends React.Component {
         <div className="header-row">
           <h4>TODO:</h4>
           <button onClick={this.props.addList}>Add List</button>
-          {this.props.lists.map(e => {
-            return <List />;
-          })}
         </div>
+        {this.props.lists.map(e => {
+          return <List id={e.id} key={e.id} />;
+        })}
       </div>
     );
   }
@@ -21,7 +21,7 @@ class TodoModule extends React.Component {
 const TodoModuleContainer = connect(
   state => {
     return {
-      lists: state.lists
+      lists: state.lists.listArray
     };
   },
   dispatch => {
