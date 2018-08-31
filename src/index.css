@@ -71,3 +71,15 @@ body {
   width: 45%;
   font-size: 30px;
 }
+
+.list {
+  display: block;
+  min-height: 300px;
+  max-width: 500px;
+  margin: 10px auto;
+  background-color: grey;
+}
+
+.hidden {
+  display: none;
+}
