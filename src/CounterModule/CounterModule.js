@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Counter from "./components/counter.js";
 import { connect } from "react-redux";
 
-class App extends Component {
+class CounterModule extends Component {
   render() {
     return (
       <div className="App">
@@ -19,7 +19,7 @@ class App extends Component {
   }
 }
 
-const AppContainer = connect(
+const CounterModuleContainer = connect(
   state => {
     return {
       counters: state.counters
@@ -30,6 +30,6 @@ const AppContainer = connect(
       addCounter: () => dispatch({ type: "ADD_COUNTER" })
     };
   }
-)(App);
+)(CounterModule);
 
-export default AppContainer;
+export default CounterModuleContainer;
