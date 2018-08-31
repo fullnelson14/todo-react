@@ -33,7 +33,7 @@ class Counter extends Component {
 const CounterContainer = connect(
   state => {
     return {
-      count: state.counters
+      count: state.counters.counterArray
     };
   },
   dispatch => {

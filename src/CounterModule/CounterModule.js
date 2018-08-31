@@ -12,7 +12,7 @@ class CounterModule extends Component {
         </div>
 
         {this.props.counters.map(e => (
-          <Counter id={e.id} />
+          <Counter id={e.id} key={e.id} />
         ))}
       </div>
     );
@@ -22,7 +22,7 @@ class CounterModule extends Component {
 const CounterModuleContainer = connect(
   state => {
     return {
-      counters: state.counters
+      counters: state.counters.counterArray
     };
   },
   dispatch => {
