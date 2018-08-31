@@ -1,15 +1,14 @@
-const initState = {
-  counters: [],
-  numCounters: 0,
-  lists: []
+const counterInitState = {
+  counterArray: [],
+  numCounters: 0
 };
 
-function reducer(state = initState, action) {
+function counterReducer(state = counterInitState, action) {
   switch (action.type) {
     case "INCREMENT":
       return {
         ...state,
-        counters: state.counters.map(
+        counterArray: state.counterArray.map(
           counter =>
             counter.id === action.id
               ? {
@@ -23,7 +22,7 @@ function reducer(state = initState, action) {
     case "DECREMENT":
       return {
         ...state,
-        counters: state.counters.map(
+        counterArray: state.counterArray.map(
           counter =>
             counter.id === action.id
               ? {
@@ -36,25 +35,20 @@ function reducer(state = initState, action) {
     case "ADD_COUNTER":
       return {
         ...state,
-        counters: [...state.counters, { count: 0, id: state.numCounters }],
+        counterArray: [
+          ...state.counterArray,
+          { count: 0, id: state.numCounters }
+        ],
         numCounters: state.numCounters + 1
       };
     case "REMOVE_COUNTER":
       return {
         ...state,
-        counters: state.counters.filter(e => {
-          return e.id !== action.id;
-        })
-      };
-
-    case "ADD_LIST":
-      return {
-        ...state,
-        lists: [...state.lists, { tasks: {} }]
+        counterArray: state.counterArray.filter(e => e.id !== action.id)
       };
     default:
       return state;
   }
 }
 
-export default reducer;
+export default counterReducer;
