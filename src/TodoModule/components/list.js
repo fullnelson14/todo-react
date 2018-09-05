@@ -4,13 +4,29 @@ import InputBox from "./inputBox";
 
 class List extends React.Component {
   render() {
+    let listTitle = this.props.lists.find(e => e.id === this.props.id).title;
     return (
       <div className="list">
-        <InputBox
-          placeholder="Enter title for todo list"
-          todoId={this.props.id}
-        />
-        <h1>{this.props.lists[this.props.id].title}</h1>
+        <div className="title-row">
+          {this.props.lists.find(e => e.id === this.props.id).hasTitle ? (
+            ""
+          ) : (
+            <InputBox
+              placeholder="Enter title for todo list"
+              todoId={this.props.id}
+              classes="title-input"
+            />
+          )}
+
+          <h1>{listTitle}</h1>
+
+          <button
+            className="remove-button"
+            onClick={() => this.props.removeList(this.props.id)}
+          >
+            X
+          </button>
+        </div>
       </div>
     );
   }
@@ -22,7 +38,11 @@ const ListContainer = connect(
       lists: state.lists.listArray
     };
   },
-  () => ({})
+  dispatch => {
+    return {
+      removeList: id => dispatch({ type: "REMOVE_LIST", id })
+    };
+  }
 )(List);
 
 export default ListContainer;

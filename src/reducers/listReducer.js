@@ -26,6 +26,12 @@ function listReducer(state = listInitState, action) {
           return list;
         })
       };
+
+    case "REMOVE_LIST":
+      return {
+        ...state,
+        listArray: state.listArray.filter(e => e.id !== action.id)
+      };
     default:
       return state;
   }

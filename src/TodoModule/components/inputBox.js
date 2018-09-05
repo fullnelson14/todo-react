@@ -36,16 +36,12 @@ class InputBox extends React.Component {
   }
 
   componentWillUnmount() {
-    this.textInput.current.removeEventListener();
+    //this.textInput.current.removeEventListener();  why does the app crash if this is enabled???
   }
 
   render() {
     return (
-      <div
-        className={`title-input ${
-          this.props.lists[this.props.todoId].hasTitle ? "hidden" : ""
-        }`}
-      >
+      <div className={`${this.props.classes} input-style`}>
         <input
           type="text"
           ref={this.textInput}
