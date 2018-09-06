@@ -5,8 +5,8 @@ import React from "react";
 const App = () => {
   return (
     <div>
-      <CounterModule />
       <TodoModule />
+      <CounterModule />
     </div>
   );
 };
