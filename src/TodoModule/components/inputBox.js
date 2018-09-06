@@ -4,9 +4,6 @@ import { connect } from "react-redux";
 class InputBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      input: ""
-    };
 
     this.textInput = React.createRef();
     this.handleChange = this.handleChange.bind(this);
@@ -20,23 +17,22 @@ class InputBox extends React.Component {
   };
 
   handleSubmit = () => {
-    this.props.addListTitle(this.props.todoId, this.state.input);
-    this.setState({
-      input: ""
-    });
+    this.props.addListTitle(this.props.todoId, this.textInput.current.value);
+  };
+
+  enterEvent = e => {
+    if (e.keyCode === 13) {
+      this.handleSubmit();
+    }
   };
 
   componentDidMount() {
-    this.textInput.current.addEventListener("keyup", e => {
-      if (e.keyCode === 13) {
-        this.handleSubmit();
-      }
-    });
+    this.textInput.current.addEventListener("keyup", this.enterEvent);
     this.textInput.current.focus();
   }
 
   componentWillUnmount() {
-    //this.textInput.current.removeEventListener();  why does the app crash if this is enabled???
+    this.textInput.current.removeEventListener("keyup", this.enterEvent);
   }
 
   render() {
@@ -45,8 +41,6 @@ class InputBox extends React.Component {
         <input
           type="text"
           ref={this.textInput}
-          value={this.state.input}
-          onChange={this.handleChange}
           placeholder={this.props.placeholder}
         />
         <button onClick={this.handleSubmit}>Submit</button>
