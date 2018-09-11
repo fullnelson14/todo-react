@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import InputBox from "./inputBox";
+import TaskInputBox from "./taskInputBox";
 
 class List extends React.Component {
   render() {
@@ -26,6 +27,9 @@ class List extends React.Component {
           >
             X
           </button>
+        </div>
+        <div className="todo-items">
+          <TaskInputBox placeholder="Enter new Todo" listId={this.props.id} />
         </div>
       </div>
     );

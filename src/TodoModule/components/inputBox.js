@@ -6,15 +6,9 @@ class InputBox extends React.Component {
     super(props);
 
     this.textInput = React.createRef();
-    this.handleChange = this.handleChange.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleChange = e => {
-    this.setState({
-      input: e.target.value
-    });
-  };
 
   handleSubmit = () => {
     this.props.addListTitle(this.props.todoId, this.textInput.current.value);
