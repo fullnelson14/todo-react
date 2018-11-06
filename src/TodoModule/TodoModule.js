@@ -10,9 +10,11 @@ class TodoModule extends React.Component {
           <h4>TODO:</h4>
           <button onClick={this.props.addList}>Add List</button>
         </div>
-        {this.props.lists.map(e => {
-          return <List id={e.id} key={e.id} />;
-        })}
+        <div className="list-box">
+          {this.props.lists.map(e => {
+            return <List id={e.id} key={e.id} />;
+          })}
+        </div>
       </div>
     );
   }

@@ -44,9 +44,13 @@ class TaskInputBox extends React.Component {
         </div>
         <div className="task-list">
           <ul>
-            {this.props.lists[this.props.listId].tasks.map(task => (
-              <li key={task.taskId}>{task.taskText}</li>
-            ))}
+            {this.props.lists
+              .find(e => {
+                return e.id === this.props.listId;
+              })
+              .tasks.map(task => (
+                <li key={task.taskId}>{task.taskText}</li>
+              ))}
           </ul>
         </div>
       </div>

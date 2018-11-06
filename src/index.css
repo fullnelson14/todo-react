@@ -9,6 +9,10 @@ body {
   align-items: center;
 }
 
+.list-box {
+  display: flex;
+}
+
 .header-row button,
 .header-row h4 {
   margin: 10px;
