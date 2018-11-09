@@ -37,7 +37,7 @@ class InputBox extends React.Component {
           ref={this.textInput}
           placeholder={this.props.placeholder}
         />
-        <button onClick={this.handleSubmit}>Submit</button>
+        <button onClick={this.handleSubmit}>Enter</button>
       </div>
     );
   }

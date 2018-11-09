@@ -13,7 +13,7 @@ class List extends React.Component {
             ""
           ) : (
             <InputBox
-              placeholder="Enter title for todo list"
+              placeholder="Enter title"
               todoId={this.props.id}
               classes="title-input"
             />

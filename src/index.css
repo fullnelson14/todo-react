@@ -1,126 +1,66 @@
-body {
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+* {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+
+  font-family: "Raleway", sans-serif;
 }
 
 .header-row {
-  display: flex;
-  align-items: center;
+  background: darkblue;
 }
 
 .list-box {
   display: flex;
-}
-
-.header-row button,
-.header-row h4 {
-  margin: 10px;
-}
-
-.count-number {
-  margin: 10px;
-  border: 2px solid blue;
-  border-radius: 6px;
-  padding: 5px;
-  display: inline-block;
-  width: 100px;
-}
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.row1 {
-  display: flex;
-}
-
-.row1 div {
-  font-size: 35px;
-}
-
-.remove-button {
-  color: red;
-  background-color: transparent;
-  border: none;
-  font-size: 15px;
-  transition-duration: 400ms;
-}
-
-.remove-button:hover {
-  color: black;
-}
-
-.remove-button:active {
-  color: grey;
-}
-
-.remove-button:focus {
-  outline: none;
-}
-
-.flex-container .remove-button {
-  align-self: flex-end;
-}
-
-.row2 {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.row2 button {
-  color: white;
-  background-color: blue;
-  border-radius: 6px;
-  border: none;
-  width: 45%;
-  font-size: 30px;
+  justify-content: center;
 }
 
 .list {
-  display: inline-block;
-  min-height: 250px;
-  min-width: 30%;
   margin: 10px;
-  background-color: grey;
-  border-radius: 10px;
 }
 
 .title-row {
-  background-color: aquamarine;
   display: flex;
   justify-content: space-between;
-  height: 55px;
+  align-items: center;
+  padding: 10px;
+  min-height: 35px;
+  min-width: 265px;
+  background-color: royalblue;
+}
+
+.title-input input {
+  background: #3e3e3e54;
+  border: none;
+  border-radius: 4px;
+  color: white;
+
+  width: 170px;
+  outline: none;
+  font-size: 20px;
+  margin: 2px;
+}
+.title-input input::placeholder {
+  color: white;
+}
+
+.title-input button {
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  color: darkblue;
+  background: #1b1b23;
+  position: relative;
+  right: 10px;
 }
 
 .title-row h1 {
   font-size: 20px;
-  margin-left: 15px;
+  color: white;
+  font-weight: 400;
 }
 
-.title-input {
-  margin: auto 0 auto 5px;
-}
-
-.input-style input {
+.remove-button {
+  background: none;
   border: none;
-  border-radius: 7px 0 0 7px;
-  padding: 5px;
-}
-.input-style button {
-  padding: 5px;
-  border: none;
-  border-radius: 0 7px 7px 0;
-  background-color: #7882f9;
-  transition-duration: 400ms;
-}
-
-.input-style button:hover {
-  background-color: blue;
-}
-
-.hidden {
-  display: none;
 }
